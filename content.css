@@ -1,0 +1,113 @@
+/* ReelFlow AI — Floating HUD Overlay on Instagram */
+#reelflow-floating-hud {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  user-select: none;
+  animation: rf-fade-in 0.3s ease-out;
+}
+
+.rf-badge-inner {
+  background: rgba(10, 15, 26, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7), 0 0 20px -2px rgba(6, 182, 212, 0.3);
+  border-radius: 14px;
+  padding: 12px 14px;
+  width: 175px;
+  color: #f8fafc;
+}
+
+.rf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.rf-glow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f5d4;
+  box-shadow: 0 0 8px #00f5d4;
+  display: inline-block;
+  margin-right: 6px;
+  animation: rf-pulse 2s infinite;
+}
+
+.rf-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #e2e8f0;
+}
+
+.rf-icon-btn {
+  background: rgba(34, 211, 238, 0.15);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+  border-radius: 6px;
+  font-size: 11px;
+  padding: 2px 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rf-icon-btn:hover {
+  background: rgba(34, 211, 238, 0.3);
+  transform: scale(1.05);
+}
+
+.rf-timer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.rf-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(51, 65, 85, 0.6);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.rf-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #06b6d4, #00f5d4);
+  transition: width 0.15s linear;
+}
+
+.rf-time-text {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #38bdf8;
+  min-width: 28px;
+  text-align: right;
+}
+
+.rf-status {
+  font-size: 10px;
+  color: #94a3b8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@keyframes rf-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.9); }
+}
+
+@keyframes rf-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

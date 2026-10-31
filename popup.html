@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReelFlow AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-icon">⚡️</div>
+        <div>
+          <div class="brand-title">ReelFlow AI</div>
+          <div class="brand-subtitle">Safari Reels Engine</div>
+        </div>
+      </div>
+      <div class="status-indicator" id="status-pill">
+        <span class="dot"></span>
+        <span id="status-text">ONLINE</span>
+      </div>
+    </header>
+
+    <!-- Master Switch -->
+    <div class="master-card">
+      <div class="master-label">
+        <div class="main-text">Auto-Scroll Engine</div>
+        <div class="sub-text">Hands-free reel navigation</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="master-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <!-- Mode Selector -->
+    <div class="section-title">Scroll Trigger Mode</div>
+    <div class="mode-grid">
+      <button class="mode-btn active" data-mode="video-end">
+        <span class="mode-name">Video End</span>
+        <span class="mode-desc">Loops &amp; ends</span>
+      </button>
+      <button class="mode-btn" data-mode="smart-adaptive">
+        <span class="mode-name">Adaptive</span>
+        <span class="mode-desc">Smart curve</span>
+      </button>
+      <button class="mode-btn" data-mode="fixed-timer">
+        <span class="mode-name">Fixed</span>
+        <span class="mode-desc">Set seconds</span>
+      </button>
+    </div>
+
+    <!-- Pacing Slider -->
+    <div class="control-row">
+      <div class="control-header">
+        <span>Target Duration</span>
+        <span class="val-badge" id="duration-val">8s</span>
+      </div>
+      <input type="range" id="duration-slider" min="3" max="30" value="8" class="range-slider">
+    </div>
+
+    <!-- Toggle Controls -->
+    <div class="toggles-list">
+      <div class="toggle-row">
+        <span>Skip Sponsored / Ads</span>
+        <input type="checkbox" id="skip-sponsored" checked>
+      </div>
+      <div class="toggle-row">
+        <span>Auto-Unmute Audio</span>
+        <input type="checkbox" id="auto-unmute">
+      </div>
+      <div class="toggle-row">
+        <span>Pause on Hover</span>
+        <input type="checkbox" id="pause-hover" checked>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="actions-row">
+      <button id="skip-now-btn" class="secondary-btn">Next Reel (Alt+J)</button>
+      <button id="open-dashboard-btn" class="primary-btn">Full Dashboard ↗</button>
+    </div>
+
+    <footer class="footer">
+      <span>ReelFlow v1.0.0</span>
+      <span>·</span>
+      <span>Safari MV3</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
